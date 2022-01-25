@@ -1,0 +1,211 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Wordle!</title>
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.0.0/journal/bootstrap.min.css" /> -->
+        <link rel = "stylesheet" href = "./assets/wordGame.css">
+    </head>
+    <body>
+        <h1>Wordle!</h1>
+        <h3 id = "info">Retrieving Word </h3>
+        <div class = "container">
+            <div class = "grid gameBoard">
+                <div id="A1" class = "letterblock noGuess column"></div>
+                <div id="A2" class = "letterblock noGuess column"></div>
+                <div id="A3" class = "letterblock noGuess column"></div>
+                <div id="A4" class = "letterblock noGuess column"></div>
+                <div id="A5" class = "letterblock noGuess column"></div>
+                <div id="B1" class = "letterblock noGuess column"></div>
+                <div id="B2" class = "letterblock noGuess column"></div>
+                <div id="B3" class = "letterblock noGuess column"></div>
+                <div id="B4" class = "letterblock noGuess column"></div>
+                <div id="B5" class = "letterblock noGuess column"></div>
+                <div id="C1" class = "letterblock noGuess column"></div>
+                <div id="C2" class = "letterblock noGuess column"></div>
+                <div id="C3" class = "letterblock noGuess column"></div>
+                <div id="C4" class = "letterblock noGuess column"></div>
+                <div id="C5" class = "letterblock noGuess column"></div>
+                <div id="D1" class = "letterblock noGuess column"></div>
+                <div id="D2" class = "letterblock noGuess column"></div>
+                <div id="D3" class = "letterblock noGuess column"></div>
+                <div id="D4" class = "letterblock noGuess column"></div>
+                <div id="D5" class = "letterblock noGuess column"></div>
+                <div id="E1" class = "letterblock noGuess column"></div>
+                <div id="E2" class = "letterblock noGuess column"></div>
+                <div id="E3" class = "letterblock noGuess column"></div>
+                <div id="E4" class = "letterblock noGuess column"></div>
+                <div id="E5" class = "letterblock noGuess column"></div>
+                <div id="F1" class = "letterblock noGuess column"></div>
+                <div id="F2" class = "letterblock noGuess column"></div>
+                <div id="F3" class = "letterblock noGuess column"></div>
+                <div id="F4" class = "letterblock noGuess column"></div>
+                <div id="F5" class = "letterblock noGuess column"></div>
+            </div>
+        </div>
+        <div class = "">
+        <div id="keyboard">
+            <div class = "row">
+                <div class="letter" id = "Q"><br>Q</div>
+                <div class="letter" id = "W"><br>W</div>
+                <div class="letter" id = "E"><br>E</div>
+                <div class="letter" id = "R"><br>R</div>
+                <div class="letter" id = "T"><br>T</div>
+                <div class="letter" id = "Y"><br>Y</div>
+                <div class="letter" id = "U"><br>U</div>
+                <div class="letter" id = "I"><br>I</div>
+                <div class="letter" id = "O"><br>O</div>
+                <div class="letter" id = "P"><br>P</div>
+            </div>
+            <div class = "row">
+                <div class = "padding"></div>
+                <div class="letter" id = "A"><br>A</div>
+                <div class="letter" id = "S"><br>S</div>
+                <div class="letter" id = "D"><br>D</div>
+                <div class="letter" id = "F"><br>F</div>
+                <div class="letter" id = "G"><br>G</div>
+                <div class="letter" id = "H"><br>H</div>
+                <div class="letter" id = "J"><br>J</div>
+                <div class="letter" id = "K"><br>K</div>
+                <div class="letter" id = "L"><br>L</div>
+            </div>
+            <div class = "row">
+                <div class="letter letterLong" id="ENTER"><br>ENTER</div>
+                <div class="letter" id = "Z"><br>Z</div>
+                <div class="letter" id = "X"><br>X</div>
+                <div class="letter" id = "C"><br>C</div>
+                <div class="letter" id = "V"><br>V</div>
+                <div class="letter" id = "B"><br>B</div>
+                <div class="letter" id = "N"><br>N</div>
+                <div class="letter" id = "M"><br>M</div>
+                <div class="letter letterLong" id="UNDO"><br>UNDO</div>
+            </div>
+        </div>
+        </div>
+        <!-- <img src = "assets/images/castle2.png" alt="castle"> -->
+        <!--
+        <img id = "castle2" src = "assets/images/castle2.png" alt="castle"> -->
+            <!-- <script>
+                console.warn("This is a warning");
+                    words = ["Harry Potter","Hermione Granger","Ron Weasley","Albus Dumbledore","Hogwarts", "Hogsmeade",
+                            "Diagon Alley", "Slytherin", "Hufflepuff", "Ravenclaw", "Gryffindor", "Leaky Cauldron", "Godric's Hollow",
+                            "Gringott's","Draco Malfoy","Dobby","House-elf", "Quidditch","Quaffle","Snitch","Bludger","Chaser","Keeper",
+                            "Seeker","Beater","Firebolt","Sirius Black", "Neville Longbottom", "Gobbstones", "Cho Chang", "Cedric Diggory",
+                            "Viktor Krum","Bellatrix LeStrange", "Petter Pettigrew", "Remus Lupin", "James Potter", "Grimmauld Place",
+                            "Rubeus Hagrid","Minerva Mcgonagall","Severus Snape","Phoenix","Ginny Weasley","Cornelius Fudge","Death Eaters",
+                            "Voldemort","Tom Marvolo Riddle", "I am Lord Voldemort","You Know Who","Defense Against the Dark Arts","Transfiguration","Charms",
+                            "Herbology","Ancient Runes","The Fat Lady","Sybill Trelawney","Hippogriff","Helga Hufflepuff","Rowena Ravenclaw","Godric Gryffindor",
+                            "Salazar Slytherin","Rita Skeeter","The Daily Prophet", "Luna Lovegood", "Wengardium Leviosa","Alohamora","Lumos",
+                            "Crookshanks"];
+                    var pickWord = "";
+                    var lettersLeft;
+                    var lives;
+                    var maxLives = 6;
+                    var wins = 0;
+                    var losses =0;
+                    var foundLetter;
+                    wrongLetters = "";
+                    var printWord;
+                    var gameOver = false;
+                    playAgain();
+        
+                    function playAgain() { //Reset everything to beginning; pick new word
+                        console.log("Wins: " + wins);
+                        console.log("Losses: " + losses);
+                        document.getElementById("You-win").style.display = "none";
+                        pickWord = words[Math.floor(Math.random()*words.length)];
+                        pickWord = pickWord;
+                        lettersLeft = pickWord.length;
+                        lives = maxLives;
+                        guessWord = [];
+                        wrongLetters = "";
+                        printWord = "";
+                        for (var i =0; i < pickWord.length;i++) {
+                            if (pickWord[i] === " " || pickWord[i] === "'") {
+                                guessWord[i] = pickWord[i];
+                                lettersLeft--;
+                                printWord = printWord + pickWord[i];
+                            } else {
+                                guessWord[i] = "_";
+                                printWord = printWord + "_";
+                            }
+                        }
+                        console.log(printWord.length);
+                        console.log(guessWord);
+                        document.getElementById("guessWord").textContent = printWord;
+                        document.getElementById("wrongLetters").textContent = "";
+                        document.getElementById("lives").textContent = "Lives: " + lives;
+                        // document.getElementById("guessWord").classList.toggle("normal");
+                        
+                        document.getElementById("guessWord").style.color = "white";
+                    }
+                    function guessLetter(guess) {
+                        foundLetter = false;
+                        printWord ="";
+                        for(var i =0; i< pickWord.length;i++) {
+                            if (pickWord.charAt(i).toLowerCase() === guess) {
+                                if (guessWord[i].toLowerCase() === guess) {
+                                    console.log("already guessed") 
+                                    foundLetter = true;
+                                } else {
+                                    guessWord[i] = pickWord.charAt(i);
+                                    foundLetter = true;
+                                    lettersLeft--;
+                                }
+                            }
+                            printWord = printWord + guessWord[i];
+                        }
+                        console.log(guessWord);
+                        if (foundLetter) {
+                            if (lettersLeft <1) {
+                                console.log("YOU WIN!");
+                                wins++;
+                                document.getElementById("wins").textContent = "Wins: " + wins;
+                                // document.getElementById("guessWord").textContent = pickWord;
+                                // document.getElementById("guessWord").style.color = "black";
+                                //playAgain(); 
+                                document.getElementById("You-win").textContent = "Congratulations!";
+                                document.getElementById("You-win").style.display = "inherit";
+                                gameOver = true;
+                            }
+                            console.log(printWord);
+                            document.getElementById("guessWord").textContent = printWord;
+                        } else {
+                            lives--;
+                            document.getElementById("lives").textContent = "Lives: " + lives;
+                            wrongLetters = wrongLetters + guess + ", ";
+                            document.getElementById("wrongLetters").textContent = wrongLetters;
+                            console.log(lives);
+                            console.log(printWord);
+                            document.getElementById("guessWord").textContent = printWord;
+                            if (lives < 1) {
+                                console.log("You lose....");
+                                console.log(pickWord);
+                                losses++;
+                                document.getElementById("losses").textContent = "Losses: " + losses;
+                                console.log(printWord);
+                                document.getElementById("guessWord").textContent = pickWord;
+                                // document.getElementById("guessWord").setAttribute("class","lost");
+                                // document.getElementById("guessWord").classList.toggle("lost");
+                                 document.getElementById("guessWord").style.color = "red";
+                                 document.getElementById("You-win").textContent = "Sorry! You lose...";
+                                document.getElementById("You-win").style.display = "inherit";
+                                // alert("you lost!");
+                                //playAgain();
+                                gameOver = true;
+                            }
+                        }
+                    }
+                    function btnPress() {
+                        if (gameOver) {
+                            gameOver = false;
+                            playAgain();
+                        }else {
+                            var btn = String.fromCharCode(event.keyCode).toLowerCase();
+                            guessLetter(btn);
+                        }
+                    }
+            </script> -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="./wordle.js"></script>
+    </body>
+</html>
