@@ -1,0 +1,84 @@
+body {
+    text-align: center;
+    /* background-image: url("images/stardust/stardust.png"); */
+    background-color:black;
+    color:white;
+    z-index:0;
+}
+h1 {
+    padding:3px;
+    margin:0px;
+}
+.container {
+    align-items:center;
+}
+.grid.gameBoard {
+    display: grid;
+    width:calc(100vh - 350px);
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(6,1fr);
+}
+.grid .letterblock{
+    aspect-ratio:1;
+    font-size:vw;
+}
+.letterblock {
+    background-color: black;
+    color:white;
+    border-style:solid;
+    border-color:lightgrey;
+    border-width:1px;
+}
+.row {
+    display: flex;
+}
+.letter {
+    height:58px;
+    width : 43px;
+    color:white;
+    background-color:gray;
+    margin:2px;
+    border-radius: 4px;
+}
+.padding {
+    width:21px;
+}
+.letterLong {
+    width:60px;
+}
+.wrong {
+    background-color:darkslategrey;
+}
+
+.close {
+    background-color:lightyellow;
+    color:black;
+}
+.right {
+    background-color:lightgreen;
+    color:white;
+}
+#guessWord {
+    letter-spacing: 8px;
+}
+.normal {
+    color: white;
+}
+.lost {
+    color:red;
+}
+img {
+    height:200px;
+    position:fixed;
+    bottom:0;
+    left:0;
+    z-index:100;
+}
+#castle2 {
+ left:670px;   
+}
+#keyboard {
+    height:200px;
+    bottom:0;
+}
+
